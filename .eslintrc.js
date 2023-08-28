@@ -1,17 +1,21 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 module.exports = {
-	rules: {
-		'no-console': 'warn'
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint'],
+	extends: [
+	  'eslint:recommended',
+	  'plugin:@typescript-eslint/recommended'
+	],
+	parserOptions: {
+	  ecmaVersion: 2020,
+	  sourceType: 'module',
 	},
-	overrides: [
-		{
-			files: ['*.ts', '*.tsx'],
-			parserOptions: {
-				project: ['./tsconfig.json']
-			},
-			rules: {
-				'@typescript-eslint/no-floating-promises': 'warn',
-				'@typescript-eslint/no-misused-promises': 'off'
-			}
-		}
-	]
-};
+	rules : {
+		'@typescript-eslint/no-var-requires': 'off',
+		'@typescript-eslint/no-unused-vars': 'off',
+	},
+	env: {
+	  node: true,
+	  es2021: true
+	},
+  };
